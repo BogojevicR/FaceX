@@ -46,7 +46,7 @@ public class FaceAttributesDrawer {
 			key = "face_id_" + i;
 		}
   
-        ImageIO.write ( image, "jpg", new File ( "D:\\Java Projects\\Workspace\\FaceX\\response.jpg" ) );		
+        ImageIO.write ( image, "jpg", new File ( System.getProperty("user.dir") + "\\" + "response.jpg" ) );		
 	}
 	
 	public void drawFrame(Graphics2D graphics2D,JSONObject face) {

@@ -91,7 +91,6 @@ public class FaceVectorsFrame extends JFrame {
 		
 		
 		File f =  new File(System.getProperty("user.dir")+"\\"+FaceX.getCurrentPicName());
-		//File f =  new File(System.getProperty("user.dir")+"\\"+"group.jpg");
 		byte[] fileContent = Files.readAllBytes(f.toPath());
 		byte[] encodedBytes = Base64.getEncoder().encode(fileContent);
 		String urlParameters = new String(encodedBytes);

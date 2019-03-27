@@ -40,6 +40,7 @@ public class AttributeFrame extends JFrame {
 	private JPanel contentPane;
 	public JLabel image_label,age,gender,gender_confidence;
 	public JTextPane responseText;
+	public File f;
 	
 	public AttributeFrame()  {
 		try {
@@ -110,7 +111,7 @@ public class AttributeFrame extends JFrame {
 			throw new NullPointerException("Must Capture Picture First!");
 		}
 		
-		File f =  new File(System.getProperty("user.dir")+"\\"+FaceX.getCurrentPicName());
+		f =  new File(System.getProperty("user.dir")+"\\"+FaceX.getCurrentPicName());
 		byte[] fileContent = Files.readAllBytes(f.toPath());
 		byte[] encodedBytes = Base64.getEncoder().encode(fileContent);    
 		String urlParameters = new String(encodedBytes);
@@ -137,7 +138,7 @@ public class AttributeFrame extends JFrame {
 	
 public void offlineMode(PersonOfflineModel person) throws IOException, ParseException {
 									
-		File f =  new File(person.getLink()+person.getFileName()+".jpg");
+		f =  new File(person.getLink()+person.getFileName()+".jpg");
 
 		responseText.setText(person.getAttribute()); 
 
